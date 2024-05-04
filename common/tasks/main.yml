@@ -13,6 +13,10 @@
       - python3-smbus
       - fail2ban
       - pure-ftpd
+      - samba
+      - samba-common-bin
+      - smbclient
+      - cifs-utils
     state: present
 
 - name: fail2ban config
