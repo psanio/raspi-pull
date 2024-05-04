@@ -42,3 +42,9 @@
       findtime = 6h
       [selinux-ssh]
       enabled = false
+
+# - name: samba config
+#   ansible.builtin.lineinfile:
+#     path: /etc/samba/smb.cfg
+#     regexp: '^'
+#     line: 127.0.0.1 localhost
