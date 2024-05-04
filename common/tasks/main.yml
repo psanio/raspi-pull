@@ -14,3 +14,27 @@
       - fail2ban
       - pure-ftpd
     state: present
+
+- name: fail2ban config
+  copy:
+    dest: "/etc/fail2ban/jail.local"
+    content: |
+      # Fail2Ban local configuration file
+      [Definition]
+      loglevel = INFO
+      logtarget = /var/log/fail2ban.log
+      syslogsocket = auto
+      socket = /var/run/fail2ban/fail2ban.sock
+      pidfile = /var/run/fail2ban/fail2ban.pid
+      dbfile = /var/lib/fail2ban/fail2ban.sqlite3
+      dbpurgeage = 1d
+      [sshd]
+      enabled = true
+      port = ssh
+      filter = sshd
+      logpath = /var/log/auth.log
+      maxretry = 3
+      bantime = 1d
+      findtime = 6h
+      [selinux-ssh]
+      enabled = false
