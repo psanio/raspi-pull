@@ -45,6 +45,6 @@
 
 - name: samba config
   ansible.builtin.lineinfile:
-    path: /etc/samba/smb.cfg
+    path: /etc/samba/smb.conf
     regexp: '^ *workgroup'
     line:    workgroup = {{workgroup}}
