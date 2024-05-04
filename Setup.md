@@ -10,3 +10,8 @@ This installed:
 - Python 3.9.2
 - PIP
 - Ansible 8.7.0
+
+Para ejecutar:
+``` Shell
+ansible-pull -vv -i inventory -C psanio-basic-1 -U https://github.com/psanio/raspi-pull site.yml
+```
