@@ -1,0 +1,15 @@
+ofi:
+  hosts:
+    dev64ofi:
+      ansible_host: 192.168.0.195
+home:
+  hosts:
+    dev64home:
+      ansible_host: 192.168.1.209
+lab:
+  children:
+    ofi:
+    home:
+  vars:
+    ansible_user: user64
+    #ansible_ssh_common_args='-o StrictHostKeyChecking=no'
