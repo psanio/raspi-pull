@@ -6,7 +6,7 @@ home:
   hosts:
     dev64home:
       ansible_host: 192.168.1.209
-lab:
+all:
   children:
     ofi:
     home:
