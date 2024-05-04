@@ -10,7 +10,7 @@
       - python3
       - python3-pip
       - python3-venv
-      - python-smbus
+      - python3-smbus
       - fail2ban
       - pure-ftpd
     state: present
