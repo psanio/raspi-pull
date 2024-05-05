@@ -52,6 +52,7 @@
 - name: samba config 2
   ansible.builtin.lineinfile:
     path: /etc/samba/smb.conf
+    regexp: 'client min protocol = SMB2'
     insertafter: '^* workgroup*?'
     line: 'client min protocol = SMB2'
     state: present
