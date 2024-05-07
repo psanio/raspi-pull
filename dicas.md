@@ -4,6 +4,10 @@ ansible.cfg:
 inventory = ./hosts
 callbacks_enabled = timer, profile_tasks, profile_roles
 ```
+hosts
+``` xml
+localhost ansible_connection=local ansible_python_interpreter="/usr/bin/env python"
+```
 2. Disable fact gathering
 When a playbook executes, each play runs a hidden task, called gathering facts, using the setup module. This gathers information about the remote node you're automating, and the details are available under the variable ansible_facts. But if you're not using these details in your playbook anywhere, then this is a waste of time. You can disable this operation by setting gather_facts: False in the play.
 
