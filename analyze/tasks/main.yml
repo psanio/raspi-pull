@@ -1,6 +1,5 @@
 ---
 - name: Gather system information
-  hosts: all
   gather_facts: true
   tags: show
   tasks:
