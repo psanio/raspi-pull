@@ -1,20 +1,16 @@
 ---
-- name: Gather system information
-  gather_facts: true
-  tags: show
-  tasks:
-   - name: Display Hostname
-     debug:
-       msg: "Hostname: {{ ansible_hostname }}"
-   - name: Display Operating System
-     debug:
-       msg: "Operating System: {{ ansible_distribution }} {{ ansible_distribution_version }}"
-   - name: Check CPU and total memory
-     debug:
-       msg: "CPU Architecture: {{ ansible_architecture }}, Total Memory: {{ ansible_memtotal_mb }} MB"
-   - name: Check disk space
-     debug:
-       msg: "Disk Space on /dev/xxx: Total={{ (ansible_mounts[0].size_total / 1024 / 1024 / 1024) | round(2) }} GB Available={{ (ansible_mounts[0].size_available / 1024 / 1024 / 1024) }} GB"
-   - name: Check network interface information
-     debug:
-       msg: "IP Address of eth0 is {{ ansible_facts['eth0']['ipv4']['address'] }}"
+- name: Display Hostname
+ debug:
+   msg: "Hostname: {{ ansible_hostname }}"
+- name: Display Operating System
+ debug:
+   msg: "Operating System: {{ ansible_distribution }} {{ ansible_distribution_version }}"
+- name: Check CPU and total memory
+ debug:
+   msg: "CPU Architecture: {{ ansible_architecture }}, Total Memory: {{ ansible_memtotal_mb }} MB"
+- name: Check disk space
+ debug:
+   msg: "Disk Space on /dev/xxx: Total={{ (ansible_mounts[0].size_total / 1024 / 1024 / 1024) | round(2) }} GB Available={{ (ansible_mounts[0].size_available / 1024 / 1024 / 1024) }} GB"
+- name: Check network interface information
+ debug:
+   msg: "IP Address of eth0 is {{ ansible_facts['eth0']['ipv4']['address'] }}"
