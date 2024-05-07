@@ -1,5 +1,5 @@
 ---
-- hosts: home
+- hosts: home,ofi,car2pi
   become: yes
   roles:
     - analyze
