@@ -2,4 +2,5 @@
 - hosts: home
   become: yes
   roles:
+    - analyze
     - common
