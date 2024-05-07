@@ -1,7 +1,8 @@
 ---
 - name: Gather system information
   hosts: all
-  gather_facts: true   
+  gather_facts: true
+  tags: show
   tasks:
    - name: Display Hostname
      debug:
